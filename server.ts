@@ -9,7 +9,7 @@ dotenv.config();
 
 const app = express();
 
-const localURL = "https://wrapify-server.jmhtran.dev";
+const localURL = "https://wrapify-server-bff9ee0094f2.herokuapp.com";
 
 
 app.use(cors());
