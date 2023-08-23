@@ -9,13 +9,13 @@ dotenv.config();
 
 const app = express();
 
-const localURL = "https://wrapify-server-bff9ee0094f2.herokuapp.com";
+const localURL = "https://wrapify-server-bff9ee0094f2.herokuapp.com/";
 
 
 app.use(cors());
 app.use("/", express.static("public"));
 const clientID = process.env.CLIENTID;
-const PORT = 8000;
+const PORT = process.env.PORT || 3000;
 
 
 // Get Code

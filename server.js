@@ -43,11 +43,11 @@ var cors = require("cors");
 var dotenv = require("dotenv");
 dotenv.config();
 var app = express();
-var localURL = "https://wrapify-server-bff9ee0094f2.herokuapp.com";
+var localURL = "https://wrapify-server-bff9ee0094f2.herokuapp.com/";
 app.use(cors());
 app.use("/", express.static("public"));
 var clientID = process.env.CLIENTID;
-var PORT = 8000;
+var PORT = process.env.PORT || 3000;
 // Get Code
 app.get("/auth/spotify", function (req, res) {
     var _a = req.query, response_type = _a.response_type, redirect_uri = _a.redirect_uri, scope = _a.scope, code_challenge = _a.code_challenge, code_challenge_method = _a.code_challenge_method, verifier = _a.verifier;
