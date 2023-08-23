@@ -43,7 +43,7 @@ var cors = require("cors");
 var dotenv = require("dotenv");
 dotenv.config();
 var app = express();
-var localURL = "https://wrapify-server.jmhtran.dev";
+var localURL = "https://wrapify-server-bff9ee0094f2.herokuapp.com";
 app.use(cors());
 app.use("/", express.static("public"));
 var clientID = process.env.CLIENTID;
