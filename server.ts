@@ -10,13 +10,17 @@ dotenv.config();
 const app = express();
 
 const localURL = "https://wrapify-server-bff9ee0094f2.herokuapp.com";
+const clientSecret = process.env.CLIENT_SECRET;
+const clientID = process.env.CLIENT_ID;
 
-
+app.use(session({
+    secret: clientSecret,
+    resave: false,
+    saveUninitialized: true
+}));
 app.use(cors());
 app.use("/", express.static("public"));
-const clientID = process.env.CLIENTID;
 const PORT = process.env.PORT || 3000;
-
 
 // Get Code
 app.get("/auth/spotify", (req, res) => {
