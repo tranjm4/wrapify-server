@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 
-const localURL = "https://wrapify-server.jmhtran.dev";
+const localURL = "https://wrapify-server-bff9ee0094f2.herokuapp.com";
 const clientURL = "https://wrapify.jmhtran.dev";
 const clientSecret = process.env.CLIENT_SECRET;
 const clientID = process.env.CLIENT_ID;
