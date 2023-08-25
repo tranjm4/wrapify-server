@@ -1,6 +1,5 @@
 const express = require("express");
 const session = require("express-session");
-const axios = require("axios");
 const querystring = require("querystring");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -9,7 +8,8 @@ dotenv.config();
 
 const app = express();
 
-const localURL = "https://wrapify-server-bff9ee0094f2.herokuapp.com";
+const localURL = "https://wrapify-server.jmhtran.dev";
+const clientURL = "https://wrapify.jmhtran.dev";
 const clientSecret = process.env.CLIENT_SECRET;
 const clientID = process.env.CLIENT_ID;
 
@@ -42,7 +42,7 @@ app.get("/auth/spotify", (req, res) => {
 
 app.get("/callback", async (req, res) => {
     const { code, verifier } = req.query;
-    const redirectURI = "https://wrapify.jmhtran.dev/callback";
+    const redirectURI = `${clientURL}/callback`;
     const params = querystring.stringify({
         "client_id": clientID,
         "grant_type": "authorization_code",

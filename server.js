@@ -37,13 +37,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _this = this;
 var express = require("express");
 var session = require("express-session");
-var axios = require("axios");
 var querystring = require("querystring");
 var cors = require("cors");
 var dotenv = require("dotenv");
 dotenv.config();
 var app = express();
-var localURL = "https://wrapify-server-bff9ee0094f2.herokuapp.com";
+var localURL = "https://wrapify-server.jmhtran.dev";
+var clientURL = "https://wrapify.jmhtran.dev";
 var clientSecret = process.env.CLIENT_SECRET;
 var clientID = process.env.CLIENT_ID;
 app.use(session({
@@ -74,7 +74,7 @@ app.get("/callback", function (req, res) { return __awaiter(_this, void 0, void 
         switch (_b.label) {
             case 0:
                 _a = req.query, code = _a.code, verifier = _a.verifier;
-                redirectURI = "https://wrapify.jmhtran.dev/callback";
+                redirectURI = "".concat(clientURL, "/callback");
                 params = querystring.stringify({
                     "client_id": clientID,
                     "grant_type": "authorization_code",
